@@ -36,13 +36,17 @@ describe('#anagram_antigrams_case_spec tester') do
     test_object7 = Anagrams_Words.new("ohio","whtzvwlz")
     expect(test_object7.check_for_vowels?()).to(eq(false))
   end
-
+  #Testing case4: get rid of specials chars
+  it('gets rid of special characters') do
+    test_object8 = Anagrams_Words.new("abcdefghijklmnopqrstuvwxyz1234567890!@\#\{$%^&*()_+", "whtzvwlz")
+    expect(test_object8.remove_specials_from_phrase()).to(eq("abcdefghijklmnopqrstuvwxyz1234567890"))
+  end
 
 
   #Testing case LAST:  is this phrase an anagram?
-  it('checks if the second word has vowels') do
-    test_object_last = Anagrams_Words.new("A man, a plan, a canal, Panama.","A man, a plan, a canal, Panama.".reverse)
-    expect(test_object_last.check_reverse_match()).to(eq(true))
-  end
+  # it('checks if the second word has vowels') do
+  #   test_object_last = Anagrams_Words.new("A man, a plan, a canal, Panama.","A man, a plan, a canal, Panama.".reverse)
+  #   expect(test_object_last.check_reverse_match()).to(eq(true))
+  # end
 
 end

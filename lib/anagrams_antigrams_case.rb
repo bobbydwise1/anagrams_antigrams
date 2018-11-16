@@ -20,5 +20,6 @@ class Anagrams_Words
   end
 
   def remove_specials_from_phrase()
-    
+    return self.user_input_word.gsub(/[^0-9A-Za-z]/, '')
+  end
 end
