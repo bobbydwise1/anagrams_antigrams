@@ -12,7 +12,11 @@ _Create a program that checks if two words are anagrams (reversed orders of each
 
 * Clone this repository using `git clone https://github.com/ `
 * Navigate to the downloaded repository using a terminal window.
-* Your computer must have Ruby installed.  Run the code by typing "ruby sdkfasfdas.rb"
+* Your computer must have Ruby installed.  In the terminal window at the working directory of the program, you will need to install the Ruby programs "rspec" and "pry".  Do this by putting this on the command line while connected to the internet:
+  "$ gem install rspec"
+  "$ gem install pry"
+
+* Run the code by typing "ruby sdkfasfdas.rb"
 
 ## Technologies Used
 
