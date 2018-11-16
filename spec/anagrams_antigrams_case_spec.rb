@@ -36,6 +36,9 @@ describe('#anagram_antigrams_case_spec tester') do
     test_object7 = Anagrams_Words.new("ohio","whtzvwlz")
     expect(test_object7.check_for_vowels?()).to(eq(false))
   end
+
+
+
   #Testing case LAST:  is this phrase an anagram?
   it('checks if the second word has vowels') do
     test_object_last = Anagrams_Words.new("A man, a plan, a canal, Panama.","A man, a plan, a canal, Panama.".reverse)

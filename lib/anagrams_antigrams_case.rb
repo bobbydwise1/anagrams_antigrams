@@ -1,8 +1,6 @@
 class Anagrams_Words
   attr_accessor(:user_input_word,:user_second_word)
 
-  # Anagrams_Words < String
-
   def initialize(user_input_word,user_second_word)
     @user_input_word = user_input_word
     @user_second_word = user_second_word
@@ -20,4 +18,7 @@ class Anagrams_Words
     return self.user_second_word.downcase().match(/[aeiou]/) != nil
     #if the above is true, vowels exist
   end
+
+  def remove_specials_from_phrase()
+    
 end
