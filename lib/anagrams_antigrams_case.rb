@@ -79,17 +79,42 @@ class Anagrams_Words
     end
   end
 
-  def check_for_vowels?(string)
-    return string.match(/[aeiou]/) != nil
-    #if the above is true, vowels exist
+  def change_phrase_into_wordarray(string_phrase)
+    output_array = string_phrase.downcase.scan(/\w+/)
   end
 
   def remove_specials_from_phrase(string_phrase)
     return string_phrase.gsub(/[^0-9A-Za-z]/, '')
   end
 
-  def change_phrase_into_wordarray(string_phrase)
-    output_array = string_phrase.downcase.scan(/\w+/)
+  def check_for_vowels?(string)
+    return string.match(/[aeiou]/) != nil
+    #if the above is true, vowels exist
   end
 
+  def check_word_array_for_vowels?(word_array)
+    index = 0
+    while index < word_array.length
+      if check_for_vowels?(word_array[index]) == false
+        return false
+      end
+      index = index + 1
+    end
+    return true
+  end
+
+  def check_if_antigram()
+    index = 0
+    array1 = count_letters(self.user_input_word.downcase)
+    array2 = count_letters(self.user_second_word.downcase)
+    while index < 26
+      if ((array1[index] == 0) && (array2[index] != 0)) || ((array1[index] != 0) && (array2[index] == 0))
+        return true
+      else
+        return false
+      end
+    index = index + 1
+    end
+  end
+  
 end
