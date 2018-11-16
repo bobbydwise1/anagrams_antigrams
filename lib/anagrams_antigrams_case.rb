@@ -1,7 +1,7 @@
 class Anagrams_Words
   attr_accessor(:user_input_word,:user_second_word)
 
-  Anagrams_Words < String
+  # Anagrams_Words < String
 
   def initialize(user_input_word,user_second_word)
     @user_input_word = user_input_word
