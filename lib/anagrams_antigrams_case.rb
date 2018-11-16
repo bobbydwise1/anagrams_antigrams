@@ -11,8 +11,13 @@ class Anagrams_Words
   def check_reverse_match()
     if self.user_input_word.reverse.downcase == self.user_second_word.downcase
       return true
-    else return false
+    else
+      return false
     end
   end
 
+  def check_for_vowels()
+    return self.user_second_word.downcase.scan(/[aeiou]/)[0] != nil
+    #if the above is false,
+  end
 end

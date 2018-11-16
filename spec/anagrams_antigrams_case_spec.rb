@@ -4,7 +4,7 @@ require('anagrams_antigrams_case')
 
 
 
-describe('#check_reverse_match') do
+describe('#anagram_antigrams_case_spec tester') do
   #Testing case1: check if two words are simple direct reversals of each other
   it('compares two words if they are anagrams') do
     test_object1 = Anagrams_Words.new("ohio","oiho")
@@ -27,6 +27,13 @@ describe('#check_reverse_match') do
     test_object5 = Anagrams_Words.new("ohio","oihO")
     expect(test_object5.check_reverse_match()).to(eq(true))
   end
-
-
+  #Testing case3: check if the second word has vowels
+  it('checks if the second word has vowels') do
+    test_object6 = Anagrams_Words.new("ohio","oiho")
+    expect(test_object6.check_for_vowels?()).to(eq(true))
+  end
+  it('checks if the second word has vowels') do
+    test_object7 = Anagrams_Words.new("ohio","whtzvwlz")
+    expect(test_object7.check_for_vowels?()).to(eq(false))
+  end
 end
