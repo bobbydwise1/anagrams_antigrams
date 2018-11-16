@@ -9,7 +9,7 @@ class Anagrams_Words
   end
 
   def check_reverse_match()
-    if self.user_input_word.reverse() == self.user_second_word
+    if self.user_input_word.reverse.downcase == self.user_second_word.downcase
       return true
     else return false
     end
