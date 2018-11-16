@@ -10,7 +10,7 @@ class Anagrams_Words
     index = 0
     letter_array_count = Array.new(26, 0)
     while index < string.length
-      case string[index]
+      case string[index].downcase
       when "a"
         letter_array_count[0] = letter_array_count[0] + 1
       when "b"
@@ -64,7 +64,7 @@ class Anagrams_Words
       when "z"
         letter_array_count[25] = letter_array_count[25] + 1
       else
-        puts "error in score tracking"
+        puts "Non-alphabet character detected"
       end
     index = index + 1
     end
@@ -79,17 +79,17 @@ class Anagrams_Words
     end
   end
 
-  def check_for_vowels?()
-    return self.user_second_word.downcase().match(/[aeiou]/) != nil
+  def check_for_vowels?(string)
+    return string.match(/[aeiou]/) != nil
     #if the above is true, vowels exist
   end
 
-  def remove_specials_from_phrase()
-    return self.user_input_word.gsub(/[^0-9A-Za-z]/, '')
+  def remove_specials_from_phrase(string_phrase)
+    return string_phrase.gsub(/[^0-9A-Za-z]/, '')
   end
 
-  def change_phrase_into_wordarray()
-    output_array = user_input_word.downcase.scan(/\w+/)
+  def change_phrase_into_wordarray(string_phrase)
+    output_array = string_phrase.downcase.scan(/\w+/)
   end
 
 end
