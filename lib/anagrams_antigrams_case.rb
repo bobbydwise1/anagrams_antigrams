@@ -14,6 +14,10 @@ class Anagrams_Words
     end
   end
 
+  def stand_alone
+    puts "hello"
+  end
+
   def check_for_vowels?()
     return self.user_second_word.downcase().match(/[aeiou]/) != nil
     #if the above is true, vowels exist
@@ -21,5 +25,9 @@ class Anagrams_Words
 
   def remove_specials_from_phrase()
     return self.user_input_word.gsub(/[^0-9A-Za-z]/, '')
+  end
+
+  def change_phrase_into_wordarray()
+    output_array = user_input_word.downcase.scan(/\b[a-zA-Z]?\S+[a-zA-Z]?\b/)
   end
 end

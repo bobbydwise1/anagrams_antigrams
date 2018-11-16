@@ -42,11 +42,9 @@ describe('#anagram_antigrams_case_spec tester') do
     expect(test_object8.remove_specials_from_phrase()).to(eq("abcdefghijklmnopqrstuvwxyz1234567890"))
   end
 
-
-  #Testing case LAST:  is this phrase an anagram?
-  # it('checks if the second word has vowels') do
-  #   test_object_last = Anagrams_Words.new("A man, a plan, a canal, Panama.","A man, a plan, a canal, Panama.".reverse)
-  #   expect(test_object_last.check_reverse_match()).to(eq(true))
-  # end
+  it('creats an array of words from a phrase') do
+    test_object9 = Anagrams_Words.new("Hello there!  Alls.","test")
+    expect(test_object9.change_phrase_into_wordarray()).to(eq(["hello","there","alls"]))
+  end
 
 end
