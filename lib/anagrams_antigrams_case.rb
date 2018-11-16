@@ -16,8 +16,8 @@ class Anagrams_Words
     end
   end
 
-  def check_for_vowels()
-    return self.user_second_word.downcase.scan(/[aeiou]/)[0] != nil
-    #if the above is false,
+  def check_for_vowels?()
+    return self.user_second_word.downcase().match(/[aeiou]/) != nil
+    #if the above is true, vowels exist
   end
 end
