@@ -95,7 +95,7 @@ class Anagrams_Words
   def check_word_array_for_vowels?(word_array)
     index = 0
     while index < word_array.length
-      if check_for_vowels?(word_array[index]) == true
+      if check_for_vowels?(word_array[index]) == false
         return false
       end
       index = index + 1
