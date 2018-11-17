@@ -95,7 +95,7 @@ class Anagrams_Words
   def check_word_array_for_vowels?(word_array)
     index = 0
     while index < word_array.length
-      if check_for_vowels?(word_array[index]) == false
+      if check_for_vowels?(word_array[index]) == true
         return false
       end
       index = index + 1
@@ -116,5 +116,41 @@ class Anagrams_Words
     index = index + 1
     end
   end
-  
+
+  def main()
+    puts "Please enter phrase 1: "
+    temp_string1 = gets.strip
+    temp_string1 = remove_specials_from_phrase(temp_string1)
+    temp_array1 = change_phrase_into_wordarray(temp_string1)
+    if check_word_array_for_vowels?(temp_array1) == true
+      puts "You need to input actual words!"
+      return 0
+    end
+    self.user_input_word = temp_string1
+    puts "\rPlease enter phrase 2: "
+    temp_string2 = gets.strip
+    temp_string2 = remove_specials_from_phrase(temp_string2)
+    temp_array2 = change_phrase_into_wordarray(temp_string2)
+    if check_word_array_for_vowels?(temp_array2) == true
+      puts "You need to input actual words!"
+      return 0
+    end
+    self.user_second_word = temp_string2
+    puts "\rThank You!"
+    result = self.check_if_anagram()
+      if result == true
+        puts "Your phrase is an anagram."
+      else
+        puts "Your phrase is not an anagram."
+      end
+    result = self.check_if_antigram()
+      if result == true
+        puts "Your phrase is an anti-gram.\r"
+      else
+        puts "Your phrase is not an anti-gram.\r"
+      end
+    return "Thank You for your time!"
+  end
 end
+
+@user1 = Anagrams_Words.new("","")
